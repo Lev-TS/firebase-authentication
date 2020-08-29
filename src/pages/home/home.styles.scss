@@ -1,0 +1,40 @@
+@import "../../utilities/variables.styles";
+
+@mixin signInOutButton {
+	border-radius: 4px;
+    padding: 10px 15px;
+	font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+	color: $red;
+	background-color: $background;
+}
+
+.home-page {
+    text-align: center;
+    height: 100%;
+
+    h1 {
+        font-size: 35px;
+        font-weight: 700;
+        color: white;
+        padding-bottom: 20px;
+        border-bottom: 2px solid $red;
+        margin-bottom: 20px;
+    }
+
+    .sign-out-button {
+		@include signInOutButton();
+		border: 1px solid $red;
+        color: $red;
+    }
+    
+    .sign-in-button {
+        @include signInOutButton();
+		border: 1px solid $green;
+		color: $green;
+	}
+}

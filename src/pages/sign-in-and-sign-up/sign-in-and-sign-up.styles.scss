@@ -1,0 +1,24 @@
+@import "../../utilities/variables.styles";
+
+.sign-in-and-sign-up {
+	width: 80%;
+	max-width: 900px;
+	margin: 30px auto;
+	padding: 60px 90px;
+
+	display: flex;
+	justify-content: space-between;
+
+	border: 1px $red solid;
+	border-radius: 2px;
+	background-color: $darker-background;
+	color: $text;
+	box-shadow: 0 0px 15px 5px $darker-background;
+}
+
+@media only screen and (max-width: 1100px) {
+	.sign-in-and-sign-up  {
+        flex-direction: column;
+        align-items: center;
+	}
+} 

@@ -1,0 +1,17 @@
+@import "../../utilities/variables.styles";
+
+.sign-in {
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+
+    .alert {
+        color: $yellow;
+        margin-bottom: 50px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+}

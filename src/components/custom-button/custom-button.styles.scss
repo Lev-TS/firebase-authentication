@@ -1,0 +1,32 @@
+@import '../../utilities/variables.styles';
+
+.custom-button {
+	height: 40px;
+	letter-spacing: 0.5px;
+	line-height: 40px;
+	padding: 0 29px;
+	font-size: 12px;
+	border: 1px solid $green;
+	border-radius: 4px;
+	background-color: $darker-background;
+	color: $green;
+	text-transform: uppercase;
+	font-weight: bolder;
+	cursor: pointer;
+
+	&:hover {
+		color: $red;
+		border: 1px solid $red;
+	}
+
+	&.google-sign-in {
+		margin-left: 10px;
+		border: none;
+		background-color: #4285f4;
+		color: white;
+
+		&:hover {
+			background-color: #357ae8;
+		}
+	}
+}

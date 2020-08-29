@@ -1,0 +1,19 @@
+@import '../../utilities/variables.styles';
+
+.form-title {
+    margin-bottom: 50px;
+
+	h2 {
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 20px;
+		color: $foreground;
+	}
+
+	span {
+		font-size: 15px;
+		font-weight: 400;
+		margin-bottom: 50px;
+		line-height: 1.3;
+	}
+}
