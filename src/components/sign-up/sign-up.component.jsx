@@ -5,6 +5,9 @@ import './sign-up.component.scss'
 import FormInput from '../form-input/form-input.component';
 import FormTitle from '../form-title/form-title.component';
 import CustomButton from '../custom-button/custom-button.component';
+import PasswordInfo from '../password-info/password-info.component';
+
+import { validatePassword } from './sign-up.utils';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
@@ -17,10 +20,8 @@ class SignUp extends React.Component {
 			email: '',
 			password: '',
 			confirmPassword: '',
-			notification: {
-				isVisibale: false,
-				message: '',
-			}
+			alert: '',
+			isInvalidPassword: false,
 		};
 	}
 
@@ -29,24 +30,22 @@ class SignUp extends React.Component {
 
 		const { displayName, email, password, confirmPassword } = this.state;
 
-        // exit this function if passwords don't match
         if (password !== confirmPassword) {
-			alert("passwords don't match");
+			this.setState({alert: "Passwords don't match."});
+			return;
+		};
+
+		if (validatePassword(password) < 3) {
+			this.setState({alert: "We've detected that the password you've entered may not be secure. Please create a new one.", isInvalidPassword: true});
 			return;
 		}
+		
 
 		try {
-            // .createUserWithEmailAndPassword() is a method that comes with auth. 
-            // Use this method to create a new user. Notice how we destructure the user. 
-            // This is because the method authorises an user and returns an object. That 
-            // userAuth object we need for createUserProfileDocument function is saved on the 
-            // "user" property of the object returened.
             const { user } = await auth.createUserWithEmailAndPassword(email, password);
             
-            // save new user to the database
 			await createUserProfileDocument(user, { displayName });
 
-            // reset the form after the user is saved
 			this.setState({
 				displayName: '',
 				email: '',
@@ -55,17 +54,21 @@ class SignUp extends React.Component {
             });
             
 		} catch (error) {
-			console.log(error);
+			this.setState({ alert: error.message })
 		}
     };
     
     handleChange = event => {
         const { name, value } = event.target;
         this.setState({ [name]: value, })
-    }
+	}
+	
+	componentWillUnmount() {
+		this.setState({alert: '', isInvalidPassword: false});
+	}
 
 	render() {
-		const { displayName, email, password, confirmPassword } = this.state;
+		const { displayName, email, password, confirmPassword, isInvalidPassword } = this.state;
 		return (
 			<div className="sign-up">
 				<FormTitle />
@@ -102,6 +105,13 @@ class SignUp extends React.Component {
 						label="Confirm Password"
 						required
 					/>
+					<div
+						className="alert"
+						style={{ display: this.state.alert ? 'flex' : 'flex' }}
+					>
+						<div>{this.state.alert}</div>
+						<PasswordInfo isInvalidPassword={isInvalidPassword} />
+					</div>
 					<CustomButton type="submit">SIGN UP</CustomButton>
 				</form>
 			</div>

@@ -38,7 +38,6 @@ class SignIn extends React.Component {
 	};
 
 	render() {
-		const alert = this.state.alert;
 
 		return (
 			<div className="sign-in">
@@ -64,9 +63,9 @@ class SignIn extends React.Component {
 					/>
 					<div
 						className="alert"
-						style={{ display: alert ? 'block' : 'none' }}
+						style={{ display: this.state.alert ? 'block' : 'none' }}
 					>
-						{alert}
+						{this.state.alert}
 					</div>
 					<div className="buttons">
 						<CustomButton type="submit" value="Submit Form">
