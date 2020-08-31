@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './sign-up.component.scss'
+import './sign-up.component.scss';
 
 import FormInput from '../form-input/form-input.component';
 import FormTitle from '../form-title/form-title.component';
@@ -30,20 +30,26 @@ class SignUp extends React.Component {
 
 		const { displayName, email, password, confirmPassword } = this.state;
 
-        if (password !== confirmPassword) {
-			this.setState({alert: "Passwords don't match."});
-			return;
-		};
-
-		if (validatePassword(password) < 3) {
-			this.setState({alert: "We've detected that the password you've entered may not be secure. Please create a new one.", isInvalidPassword: true});
+		if (password !== confirmPassword) {
+			this.setState({ alert: "Passwords don't match." });
 			return;
 		}
-		
+
+		if (validatePassword(password) < 3) {
+			this.setState({
+				alert:
+					"We've detected that the password you've entered may not be secure. Please create a new one.",
+				isInvalidPassword: true,
+			});
+			return;
+		}
 
 		try {
-            const { user } = await auth.createUserWithEmailAndPassword(email, password);
-            
+			const { user } = await auth.createUserWithEmailAndPassword(
+				email,
+				password
+			);
+
 			await createUserProfileDocument(user, { displayName });
 
 			this.setState({
@@ -51,24 +57,36 @@ class SignUp extends React.Component {
 				email: '',
 				password: '',
 				confirmPassword: '',
-            });
-            
+			});
 		} catch (error) {
-			this.setState({ alert: error.message })
+			this.setState({ alert: error.message });
 		}
-    };
-    
-    handleChange = event => {
-        const { name, value } = event.target;
-        this.setState({ [name]: value, })
-	}
-	
+	};
+
+	handleChange = (event) => {
+		const { name, value } = event.target;
+		this.setState({ [name]: value });
+	};
+
 	componentWillUnmount() {
-		this.setState({alert: '', isInvalidPassword: false});
+		this.setState({
+			displayName: '',
+			email: '',
+			password: '',
+			confirmPassword: '',
+			alert: '',
+			isInvalidPassword: false,
+		});
 	}
 
 	render() {
-		const { displayName, email, password, confirmPassword, isInvalidPassword } = this.state;
+		const {
+			displayName,
+			email,
+			password,
+			confirmPassword,
+			isInvalidPassword,
+		} = this.state;
 		return (
 			<div className="sign-up">
 				<FormTitle />
@@ -107,7 +125,7 @@ class SignUp extends React.Component {
 					/>
 					<div
 						className="alert"
-						style={{ display: this.state.alert ? 'flex' : 'flex' }}
+						style={{ display: this.state.alert ? 'flex' : 'none' }}
 					>
 						<div>{this.state.alert}</div>
 						<PasswordInfo isInvalidPassword={isInvalidPassword} />
