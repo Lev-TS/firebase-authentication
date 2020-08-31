@@ -47,7 +47,7 @@ class App extends React.Component {
 				<Switch>
 					<Route
 						exact
-						path="/"
+						path="/firebase-authentication"
 						render={(props) => (
 							<HomePage
 								{...props}
@@ -57,7 +57,7 @@ class App extends React.Component {
 					/>
 					<Route
 						exact
-						path="/signin"
+						path="/firebase-authentication/signin"
 						render={() =>
 							this.state.currentUser ? (
 								<Redirect to="/" />
