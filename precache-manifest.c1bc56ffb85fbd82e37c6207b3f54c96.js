@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "270f7c9c1d929af626d4491b0ecb5aa4",
+    "revision": "f8b9524617e60735787c4f14a81f4d04",
     "url": "/firebase-authentication/index.html"
   },
   {
-    "revision": "812b7f92a94aceb63bad",
+    "revision": "0050ed409acb64cc5bb9",
     "url": "/firebase-authentication/static/css/main.9d861814.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/firebase-authentication/static/js/2.8aa15f5d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "812b7f92a94aceb63bad",
-    "url": "/firebase-authentication/static/js/main.7a1d72c6.chunk.js"
+    "revision": "0050ed409acb64cc5bb9",
+    "url": "/firebase-authentication/static/js/main.02c1602c.chunk.js"
   },
   {
     "revision": "e2a7549a6f24f75240b0",

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/firebase-authentication/static/css/main.9d861814.chunk.css",
-    "main.js": "/firebase-authentication/static/js/main.7a1d72c6.chunk.js",
-    "main.js.map": "/firebase-authentication/static/js/main.7a1d72c6.chunk.js.map",
+    "main.js": "/firebase-authentication/static/js/main.02c1602c.chunk.js",
+    "main.js.map": "/firebase-authentication/static/js/main.02c1602c.chunk.js.map",
     "runtime-main.js": "/firebase-authentication/static/js/runtime-main.c019f4e6.js",
     "runtime-main.js.map": "/firebase-authentication/static/js/runtime-main.c019f4e6.js.map",
     "static/js/2.8aa15f5d.chunk.js": "/firebase-authentication/static/js/2.8aa15f5d.chunk.js",
     "static/js/2.8aa15f5d.chunk.js.map": "/firebase-authentication/static/js/2.8aa15f5d.chunk.js.map",
     "index.html": "/firebase-authentication/index.html",
-    "precache-manifest.928d70af89236c35ee3a5caa7e20cc2b.js": "/firebase-authentication/precache-manifest.928d70af89236c35ee3a5caa7e20cc2b.js",
+    "precache-manifest.c1bc56ffb85fbd82e37c6207b3f54c96.js": "/firebase-authentication/precache-manifest.c1bc56ffb85fbd82e37c6207b3f54c96.js",
     "service-worker.js": "/firebase-authentication/service-worker.js",
     "static/css/main.9d861814.chunk.css.map": "/firebase-authentication/static/css/main.9d861814.chunk.css.map",
     "static/js/2.8aa15f5d.chunk.js.LICENSE.txt": "/firebase-authentication/static/js/2.8aa15f5d.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c019f4e6.js",
     "static/js/2.8aa15f5d.chunk.js",
     "static/css/main.9d861814.chunk.css",
-    "static/js/main.7a1d72c6.chunk.js"
+    "static/js/main.02c1602c.chunk.js"
   ]
 }
